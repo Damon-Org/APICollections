@@ -1,4 +1,4 @@
-import BaseModule from '../structures/modules/BaseModule.js'
+import BaseModule from './structures/modules/BaseModule.js'
 
 import SpotifyAPI from './structures/SpotifyAPI.js'
 import YouTubeAPI from './structures/YouTubeAPI.js'

@@ -1,7 +1,7 @@
 import BaseModule from './structures/modules/BaseModule.js'
 
-import SpotifyAPI from './structures/SpotifyAPI.js'
-import YouTubeAPI from './structures/YouTubeAPI.js'
+import SpotifyAPI from './structures/api/SpotifyAPI.js'
+import YouTubeAPI from './structures/api/YouTubeAPI.js'
 
 export default class APICollections extends BaseModule {
     /**

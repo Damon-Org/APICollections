@@ -13,6 +13,14 @@ export default class DeezerAPI {
         return await this.DeezerClient.musics.getTrack(a1);
     }
 
+    async getPlaylist(a1) {
+        return await this.DeezerClient.musics.getPlaylist(a1);
+    }
+
+    async getAlbum(a1) {
+        return await this.DeezerClient.musics.getAlbum(a1);
+    }
+
     async fetchSharableLink(path) {
         const options = {
             hostname: 'deezer.page.link',

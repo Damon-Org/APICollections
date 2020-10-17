@@ -18,7 +18,7 @@ export default class APICollections extends BaseModule {
 
     setup() {
         this.youtube = new YouTubeAPI();
-        this.spotify = new SpotifyAPI(this._m, this.auth.credentials.api.spotify);
+        //this.spotify = new SpotifyAPI(this._m, this.auth.credentials.api.spotify);
         this.deezer = new DeezerAPI(this._m);
 
         return true;

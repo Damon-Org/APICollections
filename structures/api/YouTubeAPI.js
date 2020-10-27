@@ -1,13 +1,9 @@
-import youtube from 'scrape-youtube'
+import youtube from '@yimura/scraper'
 import { YTDefaultSearchOptions } from '../../util/Constants.js'
 
 export default class YouTubeAPI{
     constructor() {
-        this.yt = youtube.default;
-    }
-
-    _mergeOptions(...args) {
-        return Object.assign({}, YTDefaultSearchOptions, ...args);
+        this.yt = new youtube.default();
     }
 
     /**
@@ -15,11 +11,9 @@ export default class YouTubeAPI{
      * @param {Object} [options={}] The options to pass to the search scraper
      * @returns {Promise<Object>|Promise<null>} Returns JSON data or null incase of an error
      */
-    async search(searchFor, options = {}) {
-        options = this._mergeOptions(options);
-
+    async search(searchFor) {
         try {
-            return await this.yt.search(searchFor, options);
+            return await this.yt.search(searchFor);
         } catch (e) {
             return null;
         }
@@ -30,6 +24,6 @@ export default class YouTubeAPI{
      * @returns {Promise<Object>} JSON data
      */
     searchOne(searchFor) {
-        return this.search(searchFor, { limit: 1, type: 'video' });
+        return this.yt.search(searchFor);
     }
 }

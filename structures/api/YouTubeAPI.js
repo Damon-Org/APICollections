@@ -13,7 +13,7 @@ export default class YouTubeAPI{
      */
     async search(searchFor) {
         try {
-            return await this.yt.search(searchFor);
+            return (await this.yt.search(searchFor))?.videos.slice(0, 5);
         } catch (e) {
             return null;
         }
@@ -23,7 +23,7 @@ export default class YouTubeAPI{
      * @param {string} searchFor A String to search for on Youtube
      * @returns {Promise<Object>} JSON data
      */
-    searchOne(searchFor) {
-        return this.yt.search(searchFor);
+    async searchOne(searchFor) {
+        return (await this.yt.search(searchFor))?.videos[0];
     }
 }
